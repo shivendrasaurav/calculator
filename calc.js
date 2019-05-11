@@ -1,4 +1,14 @@
 var op='';
+function writeinbracket(){
+    var a=document.getElementById("calc_disp");
+    a.value+='(';
+    op+='(';
+}
+function writeoutbracket(){
+    var a=document.getElementById("calc_disp");
+    a.value+=')';
+    op+=')';
+}
 function write0(){
     var a=document.getElementById("calc_disp");
     a.value+='0';
