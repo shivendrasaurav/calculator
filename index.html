@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="calc.js"></script>
+        <style>
+            input[type=number]{ border:solid 2px #0a0a0a;}
+            input[type=number]:focus{ border:solid 2px blue;}
+        </style>
+    </head>
+    <body>
+    <section>
+        <input type="text" class="col large6" id="calc_disp"><br><br>
+        <button class="tab primary col large1" onclick="write7();">7</button>
+        <button class="tab primary col large1" onclick="write8();">8</button>
+        <button class="tab primary col large1" onclick="write9();">9</button>
+        <button class="tab primary col large1" onclick="writedivide();">/</button>
+        <button class="tab primary col large1" onclick="writeclr();">CLEAR</button>
+        <br><br>
+        <button class="tab primary col large1" onclick="write4();">4</button>
+        <button class="tab primary col large1" onclick="write5();">5</button>
+        <button class="tab primary col large1" onclick="write6();">6</button>
+        <button class="tab primary col large1" onclick="writeproduct();">*</button>
+        <button class="tab primary col large1" onclick="writeinbracket();">(</button>
+        <br><br>
+        <button class="tab primary col large1" onclick="write1();">1</button>
+        <button class="tab primary col large1" onclick="write2();">2</button>
+        <button class="tab primary col large1" onclick="write3();">3</button>
+        <button class="tab primary col large1" onclick="writesub();">-</button>
+        <button class="tab primary col large1" onclick="writeoutbracket();">)</button>
+        <br><br>
+        <button class="tab primary col large1" onclick="writedecimal();">.</button>
+        <button class="tab primary col large1" onclick="write0();">0</button>
+        <button class="tab primary col large1" onclick="writedelete();">DEL</button>
+        <button class="tab primary col large1" onclick="writeadd();">+</button>
+        <button class="tab primary col large1" onclick="calculate();">=</button>
+    </section>
+        </body>
+</html>
