@@ -84,6 +84,11 @@ function writeclear(){
     a.value='';
     op='';
 }
+function writedecimal(){
+    var a=document.getElementById("calc_disp");
+    a.value='.';
+    op='.';
+}
 function writedelete(){
     var a=document.getElementById("calc_disp");
     var c=document.getElementById("calc_disp").value;
