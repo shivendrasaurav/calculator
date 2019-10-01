@@ -3,11 +3,12 @@
         <title>Calculator</title>
         <link href="fluent.css" type="text/css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Web Calculator Based On Fluent Design">
         <script src="calc.js"></script>
         <script src="fluent.js"></script>
         <link rel='manifest' href='manifest.webmanifest'>
-        <script src="pwabuilder-sw-register.js"></script>
         <script src="pwabuilder-sw.js"></script>
+
         
     </head>
     <body class="column large6 small12 medium10 center">
@@ -78,4 +79,26 @@
             </button>
         </div>
     </body>
-</html>
+    <script>
+        // This is the "Offline copy of pages" service worker
+
+        // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+
+        // Check compatibility for the browser we're running this in
+        if ("serviceWorker" in navigator) {
+            if (navigator.serviceWorker.controller) {
+                console.log("[PWA Builder] active service worker found, no need to register");
+            } else {
+                // Register the service worker
+                navigator.serviceWorker
+                .register("pwabuilder-sw.js", {
+                    scope: "./"
+                })
+                .then(function (reg) {
+                    console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+                });
+            }
+        }
+
+    </script>
+    </html>
