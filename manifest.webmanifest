@@ -1,0 +1,16 @@
+{"dir" : "ltr",
+    "lang" : "ro",
+    "name" : "Calculator",
+    "scope" : "/jsapp.calculator/",
+    "display" : "browser",
+    "start_url" : "https://shivendrasaurav.github.io/jsapp.calculator/",
+    "short_name" : "Calculator",
+    "theme_color" : "transparent",
+    "description" : "",
+    "orientation" : "any",
+    "background_color" : "transparent",
+    "related_applications" : "",
+    "prefer_related_applications" : "false",
+    "generated" : "true",
+    "icons" : [
+    ]}
