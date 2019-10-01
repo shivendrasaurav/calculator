@@ -86,8 +86,8 @@ function writeclear(){
 }
 function writedecimal(){
     var a=document.getElementById("calc_disp");
-    a.value='.';
-    op='.';
+    a.value+='.';
+    op+='.';
 }
 function writedelete(){
     var a=document.getElementById("calc_disp");

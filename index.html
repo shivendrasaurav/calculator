@@ -1,48 +1,80 @@
 <html>
     <head>
         <title>Calculator</title>
+        <link href="./Fluent-Design-For-Web/fluent.css" type="text/css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="calc.js"></script>
+        <script src="./Fluent-Design-For-Web/fluent.js"></script>
         <style>
-            input[type=text]{width:42%; height: 40%; font-size: 32px; border:solid 2px #FFFDDD; background: #FFFDDD; margin-left:-2px; margin-bottom:-1.35%; padding-top:15%;}
-            input[type=text]:focus{ border:solid 2px blue;}
-            .tab{width: 8.4%; height: 60px; border: none; background: linear-gradient(to right bottom, #0099FF 0%, #0099DD 100%); color: #FFF; font-size: 24px; margin:-2px; margin-bottom:-2%;}
-            .tab:focus{animation:ripple 0.5s;}
-            @keyframes ripple{
-				0%{background: linear-gradient(to right bottom, #0099FF 0%, #009DDD 100%);}
-				50%{background:#000;}
-				100%{background: linear-gradient(to right bottom, #0099FF 0%, #009DDD 100%);}
-			}
-            @media (max-width: 500px) {
-                input[type=text]{padding-top: 40%; margin-bottom:-3.75%; width:97.4%; height: 30%; font-size: 36px; border:solid 2px #0a0a0a;}
-                .tab{width: 19.9%; margin-right:-1%; margin-bottom:-5%; height: 12%; border: none;  background: linear-gradient(to right bottom, #0099FF 0%, #0099DD 100%); color: #FFF; font-size: 24px;}
-            }
+
         </style>
     </head>
-    <body>
-        <input type="text" class="input" id="calc_disp" disabled><br><br>
-        <button class="tab primary1" onclick="write7();">7</button>
-        <button class="tab primary1" onclick="write8();">8</button>
-        <button class="tab primary1" onclick="write9();">9</button>
-        <button class="tab primary1" onclick="writedivide();">/</button>
-        <button class="tab primary1" onclick="writeclear();">CLR</button>
-        <br><br>
-        <button class="tab primary1" onclick="write4();">4</button>
-        <button class="tab primary1" onclick="write5();">5</button>
-        <button class="tab primary1" onclick="write6();">6</button>
-        <button class="tab primary1" onclick="writeproduct();">*</button>
-        <button class="tab primary1" onclick="writeinbracket();">(</button>
-        <br><br>
-        <button class="tab primary1" onclick="write1();">1</button>
-        <button class="tab primary1" onclick="write2();">2</button>
-        <button class="tab primary1" onclick="write3();">3</button>
-        <button class="tab primary1" onclick="writesub();">-</button>
-        <button class="tab primary1" onclick="writeoutbracket();">)</button>
-        <br><br>
-        <button class="tab primary1" onclick="writedecimal();">.</button>
-        <button class="tab primary1" onclick="write0();">0</button>
-        <button class="tab primary1" onclick="writedelete();">DEL</button>
-        <button class="tab primary1" onclick="writeadd();">+</button>
-        <button class="tab primary1" onclick="calculate(); output();">=</button>
+    <body class="column large6 small12 medium10 center">
+        <input type="text" class="calc_area" id="calc_disp" disabled><br><br>
+        <div style="margin-left: 5%">
+            <button class="frost_container column small3" onclick="write7();" onmouseover="frosting();">
+                <span class="frost">7</span>
+            </button>
+            <button class="frost_container column small3" onclick="write8();" onmouseover="frosting();">
+                <span class="frost">8</span>
+            </button>
+            <button class="frost_container column small3" onclick="write9();" onmouseover="frosting();">
+                <span class="frost">9</span>
+            </button>
+            <button class="frost_container column small3" onclick="writedivide();" onmouseover="frosting();">
+                <span class="frost">/</span>
+            </button>
+            <button class="frost_container column small3" onclick="writeclear();" onmouseover="frosting();">
+                <span class="frost">CLR</span>
+            </button>
+            <br><br>
+            <button class="frost_container column small3" onclick="write4();" onmouseover="frosting();">
+                <span class="frost">4</span>
+            </button>
+            <button class="frost_container column small3" onclick="write5();" onmouseover="frosting();">
+                <span class="frost">5</span>
+            </button>
+            <button class="frost_container column small3" onclick="write6();" onmouseover="frosting();">
+                <span class="frost">6</span>
+            </button>
+            <button class="frost_container column small3" onclick="writeproduct();" onmouseover="frosting();">
+                <span class="frost">*</span>
+            </button>
+            <button class="frost_container column small3" onclick="writeinbracket();" onmouseover="frosting();">
+                <span class="frost">(</span>
+            </button>
+            <br><br>
+            <button class="frost_container column small3" onclick="write1();" onmouseover="frosting();">
+                <span class="frost">1</span>
+            </button>
+            <button class="frost_container column small3" onclick="write2();" onmouseover="frosting();">
+                <span class="frost">2</span>
+            </button>
+            <button class="frost_container column small3" onclick="write3();" onmouseover="frosting();">
+                <span class="frost">3</span>
+            </button>
+            <button class="frost_container column small3" onclick="writesub();" onmouseover="frosting();">
+                <span class="frost">-</span>
+            </button>
+            <button class="frost_container column small3" onclick="writeoutbracket();" onmouseover="frosting();">
+                <span class="frost">)</span>
+            </button>
+            <br><br>
+            <button class="frost_container column small3" onclick="writedecimal();" onmouseover="frosting();">
+                <span class="frost">.</span>
+            </button>
+            <button class="frost_container column small3" onclick="write0();" onmouseover="frosting();">
+                <span class="frost">0</span>
+            </button>
+            <button class="frost_container column small3" onclick="writedelete();" onmouseover="frosting();">
+                <span class="frost">DEL</span>
+            </button>
+            <button class="frost_container column small3" onclick="writeadd();" onmouseover="frosting();">
+                <span class="frost">+</span>
+            </button>
+            <button class="frost_container column small3" onclick="calculate(); output();" onmouseover="frosting();">
+                <span class="frost">=</span>
+            </button>
+        </div>
     </body>
 </html>
