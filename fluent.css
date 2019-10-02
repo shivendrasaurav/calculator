@@ -676,4 +676,7 @@ input.calc_area, input.calc_area:hover, input.calc_hover:focus{
     body {
       background-color: yellow;
     }
+    .install_button{
+        display: none;
+    }
   }
