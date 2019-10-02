@@ -130,11 +130,12 @@ a:hover:before,.link:hover:before{width: 100%; transition: 1s ease;}
 /*Buttons*/
 
 button,.button{
-    background: rgba(125, 125, 125, 0.4);
+    background: rgba(125, 125, 125, 0.6);
     border: none;
     padding: 2%;
     border: 4px solid transparent;
     text-align: center;
+    color: #FFF;
 }
 button.large,.button.large{width: 60%; height: 10%; font-size: 120%;}
 button.icon,.button.icon{height:40px; width: 40px; border: 1px solid rgba(0, 0, 0, 0.0); margin-left: 1%;}
@@ -659,14 +660,14 @@ li.navigation_item::before{display: none;}
 
 li{font-size: 14px;}
 
-input.calc_area{
+input.calc_area, input.calc_area:hover, input.calc_hover:focus{
     width: 100%;
     font-size: 36px;
-    background: #EEE;
     padding: 25px;
     padding-bottom: 200px;
+    border: 2px solid #FFF;
+    color: #FFF;
 }
-
-body{
-    background: #EEE;
+.primary_black{
+    background: #2A2A2A;
 }
