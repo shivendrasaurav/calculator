@@ -671,3 +671,9 @@ input.calc_area, input.calc_area:hover, input.calc_hover:focus{
 .primary_black{
     background: #2A2A2A;
 }
+
+@media all and (display-mode: standalone) {
+    body {
+      background-color: yellow;
+    }
+  }
