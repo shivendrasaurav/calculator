@@ -9,11 +9,17 @@
     "description" : "",
     "orientation" : "any",
     "background_color" : "transparent",
+    "prefer_related_applications" : false,
     "generated" : "true",
     "icons" : [
         {
             "src": "/images/192x192.png",
             "type": "image/png",
             "sizes": "192x192"
+        },
+        {
+            "src": "/images/512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
         }
     ]}
