@@ -2,7 +2,7 @@
     "lang" : "ro",
     "name" : "Calculator",
     "scope" : "./",
-    "display" : "browser",
+    "display" : "standalone",
     "start_url" : "./",
     "short_name" : "Calculator",
     "theme_color" : "transparent",
@@ -11,4 +11,9 @@
     "background_color" : "transparent",
     "generated" : "true",
     "icons" : [
+        {
+            "src": "/images/192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
     ]}
