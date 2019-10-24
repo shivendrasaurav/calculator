@@ -49,8 +49,8 @@
             }
         </script>
     </head>
-    <body class="column large6 small12 medium10 center primary_black" onload="checkinstall();">
-        <input type="text" class="calc_area primary_black" id="calc_disp" disabled><br><br>
+    <body class="column large6 small12 medium10 center primary_black" onload="checkinstall();"  onkeydown="keypress(event);" >
+        <textarea class="calc_area primary_black" id="calc_disp" disabled></textarea><br><br>
         <div style="margin-left: 5%">
             <button class="frost_container column small3" onclick="write7();" onmouseover="frosting();">
                 <span class="frost">7</span>
@@ -80,8 +80,8 @@
             <button class="frost_container column small3" onclick="writeproduct();" onmouseover="frosting();">
                 <span class="frost">*</span>
             </button>
-            <button class="frost_container column small3" onclick="writeinbracket();" onmouseover="frosting();">
-                <span class="frost">(</span>
+            <button class="frost_container column small3" onclick="writedelete();" onmouseover="frosting();">
+                <span class="frost">DEL</span>
             </button>
             <br><br>
             <button class="frost_container column small3" onclick="write1();" onmouseover="frosting();">
@@ -106,14 +106,14 @@
             <button class="frost_container column small3" onclick="write0();" onmouseover="frosting();">
                 <span class="frost">0</span>
             </button>
-            <button class="frost_container column small3" onclick="writedelete();" onmouseover="frosting();">
-                <span class="frost">DEL</span>
+            <button class="frost_container column small3" onclick="calculate(); output();" onmouseover="frosting();">
+                <span class="frost">=</span>
             </button>
             <button class="frost_container column small3" onclick="writeadd();" onmouseover="frosting();">
                 <span class="frost">+</span>
             </button>
-            <button class="frost_container column small3" onclick="calculate(); output();" onmouseover="frosting();">
-                <span class="frost">=</span>
+            <button class="frost_container column small3" onclick="writeinbracket();" onmouseover="frosting();">
+                <span class="frost">(</span>
             </button>
         </div><br><br>
         <button id="install_button" class="large center frost_container" onmouseover="frosting();" onclick="install();" style="background: rgb(14, 95, 202);">

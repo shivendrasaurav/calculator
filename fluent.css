@@ -660,13 +660,13 @@ li.navigation_item::before{display: none;}
 
 li{font-size: 14px;}
 
-input.calc_area, input.calc_area:hover, input.calc_hover:focus{
+.calc_area, .calc_area:hover, .calc_hover:focus{
     width: 100%;
+    height: 200px;
     font-size: 36px;
-    padding: 25px;
-    padding-bottom: 200px;
     border: 2px solid #FFF;
     color: #FFF;
+    padding: 20px;
 }
 .primary_black{
     background: #2A2A2A;

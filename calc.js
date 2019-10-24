@@ -101,3 +101,70 @@ function calculate(){
     op=b;
     document.getElementById("calc_disp").value=b;
 }
+
+function keypress(){
+    var x = event.keyCode;
+
+    if(x == 48 || x == 96)
+        write0();
+
+    else if(x == 49 || x == 97)
+        write1();
+
+    else if(x == 50 || x == 98)
+        write2();
+
+    else if(x == 51 || x == 99)
+        write3();
+
+    else if(x == 52 || x == 100)
+        write4();
+
+    else if(x == 53 || x == 101)
+        write5();
+
+    else if(x == 54 || x == 102)
+        write6();
+
+    else if(x == 55 || x == 103)
+        write7();
+
+    else if(x == 56 || x == 104)
+        write8();
+
+    else if(x == 57 || x == 105)
+        write9();
+
+    else if(x == 107)
+        writeadd();
+
+    else if(x == 109)
+        writesub();
+
+    else if(x == 106)
+        writeproduct();
+
+    else if(x == 111)
+        writedivide();
+
+    else if(x == 219)
+        writeinbracket();
+
+    else if(x == 221)
+        writeoutbracket();
+
+    else if(x == 67)
+        writeclear();
+
+    else if(x == 8 || x == 46)
+        writedelete();
+
+    else if(x == 190 || x == 110)
+        writedecimal();
+
+    else if(x == 187 || x == 13){
+        calculate();
+        output();
+    }
+
+}
