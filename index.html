@@ -38,9 +38,10 @@
 
             
             }
+            checkinstall();
             }
 
-            function blurbackground(){
+            function showinstaller(){
                 document.getElementById("install_button_surface").style.display="Block";
                 document.getElementById("head").style.filter="saturate(125%) blur(10px)";            
             }
@@ -54,11 +55,11 @@
         <script>
             function checkinstall(){
                 if (window.matchMedia('(display-mode: standalone)').matches) {  
-                    document.getElementById("install_button_surface").style.display=("none");
+                    closeinstaller();
                     console.log('display-mode is standalone');
                 }  
                 else
-                    blurbackground();
+                    showinstaller();
             }
         </script>
     </head>
