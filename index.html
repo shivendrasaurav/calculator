@@ -2,6 +2,7 @@
     <head>
         <title>Calculator</title>
         <link href="fluent.css" type="text/css" rel="stylesheet">
+        <link href="Icons/css/fluent-icons.css" type="text/css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Web Calculator Based On Fluent Design">
         <script src="calc.js"></script>
@@ -39,17 +40,30 @@
             }
             }
 
+            function blurbackground(){
+                document.getElementById("install_button_surface").style.display="Block";
+                document.getElementById("head").style.filter="saturate(125%) blur(10px)";            
+            }
+            
+            function closeinstaller(){
+                document.getElementById("install_button_surface").style.display="none";
+                document.getElementById("head").style.filter="saturate(100%) blur(0px)";            
+            }
+
         </script>
         <script>
             function checkinstall(){
                 if (window.matchMedia('(display-mode: standalone)').matches) {  
-                    document.getElementById("install_button").style.display=("none");
+                    document.getElementById("install_button_surface").style.display=("none");
                     console.log('display-mode is standalone');
                 }  
+                else
+                    blurbackground();
             }
         </script>
     </head>
     <body class="column large6 small12 medium10 center primary_black" onload="checkinstall();"  onkeydown="keypress(event);" >
+        <div id="head">
         <textarea class="calc_area primary_black" id="calc_disp" disabled></textarea><br><br>
         <div style="margin-left: 5%">
             <button class="frost_container column small3" onclick="write7();" onmouseover="frosting();">
@@ -116,9 +130,21 @@
                 <span class="frost">(</span>
             </button>
         </div><br><br>
-        <button id="install_button" class="large center frost_container" onmouseover="frosting();" onclick="install();" style="background: rgb(14, 95, 202);">
-            <span class="frost">Install Calculator</span>
-        </button>
+
+    </div>
+
+
+        <div class="modal_container" id="install_button_surface">
+            <div class="modal_content">
+                <br><br><br><br><br><br><br><br>
+                <button class="circular primary_red right" style="width: 50px; height: 50px; padding: 0px;" onclick="closeinstaller()">
+                    <i class="ms-Icon ms-Icon--Cancel"></i>
+                </button><br><br><br><br>
+                <button id="install_button" class="primary_blue center frost_container" onmouseover="frosting();" onclick="install();" style="height: 100px; width: 300px; font-size: 28px;">
+                    <span class="frost">Install Calculator</span>
+                </button>
+            </div>
+        </div>
     </body>
     <script>
         // This is the "Offline copy of pages" service worker
