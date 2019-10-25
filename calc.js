@@ -102,6 +102,12 @@ function calculate(){
     document.getElementById("calc_disp").value=b;
 }
 
+function emptyword(){
+    var a=document.getElementById("calc_disp");
+    a.value+='';
+    op+='';
+}
+
 function keypress(){
     var x = event.keyCode;
 
@@ -165,6 +171,9 @@ function keypress(){
     else if(x == 187 || x == 13){
         calculate();
         output();
+    }
+    else{
+        emptyword();
     }
 
 }

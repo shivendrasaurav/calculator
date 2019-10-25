@@ -63,9 +63,9 @@
             }
         </script>
     </head>
-    <body class="column large6 small12 medium10 center primary_black" onload="checkinstall();"  onkeydown="keypress(event);" >
+    <body class="column large6 small12 medium10 center primary_black" onload="checkinstall();" onkeydown="keypress(event);" >
         <div id="head">
-        <textarea class="calc_area primary_black" id="calc_disp" disabled></textarea><br><br>
+        <textarea class="calc_area primary_black" id="calc_disp" ></textarea><br><br>
         <div style="margin-left: 5%">
             <button class="frost_container column small3" onclick="write7();" onmouseover="frosting();">
                 <span class="frost">7</span>
@@ -79,8 +79,8 @@
             <button class="frost_container column small3" onclick="writedivide();" onmouseover="frosting();">
                 <span class="frost">/</span>
             </button>
-            <button class="frost_container column small3" onclick="writeclear();" onmouseover="frosting();">
-                <span class="frost">CLR</span>
+            <button class="frost_container column small3" onclick="writedelete();" onmouseover="frosting();">
+                <span class="frost">DEL</span>
             </button>
             <br><br>
             <button class="frost_container column small3" onclick="write4();" onmouseover="frosting();">
@@ -95,8 +95,8 @@
             <button class="frost_container column small3" onclick="writeproduct();" onmouseover="frosting();">
                 <span class="frost">*</span>
             </button>
-            <button class="frost_container column small3" onclick="writedelete();" onmouseover="frosting();">
-                <span class="frost">DEL</span>
+            <button class="frost_container column small3" onclick="writeclear();" onmouseover="frosting();">
+                <span class="frost">CLR</span>
             </button>
             <br><br>
             <button class="frost_container column small3" onclick="write1();" onmouseover="frosting();">
