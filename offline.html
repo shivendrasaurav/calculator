@@ -2,14 +2,69 @@
     <head>
         <title>Calculator</title>
         <link href="fluent.css" type="text/css" rel="stylesheet">
+        <link href="Icons/css/fluent-icons.css" type="text/css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Web Calculator Based On Fluent Design">
         <script src="calc.js"></script>
         <script src="fluent.js"></script>
         <link rel='manifest' href='manifest.webmanifest'>
-        <script src="pwabuilder-sw-register.js"></script>
+        <script src="pwabuilder-sw.js"></script>
+        <script>
+            
+            let deferredPrompt = null;
+
+            window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent Chrome 67 and earlier from automatically showing the prompt
+            e.preventDefault();
+            // Stash the event so it can be triggered later.
+            deferredPrompt = e;
+            });
+
+            async function install() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                console.log(deferredPrompt)
+                deferredPrompt.userChoice.then(function(choiceResult){
+
+                if (choiceResult.outcome === 'accepted') {
+                console.log('Your PWA has been installed');
+                } else {
+                console.log('User chose to not install your PWA');
+                }
+
+                deferredPrompt = null;
+
+                });
+
+            }
+            closeinstaller();
+            }
+
+            function showinstaller(){
+                document.getElementById("install_button_surface").style.display="Block";
+                document.getElementById("head").style.filter="saturate(125%) blur(10px)";            
+            }
+            
+            function closeinstaller(){
+                document.getElementById("install_button_surface").style.display="none";
+                document.getElementById("head").style.filter="saturate(100%) blur(0px)";            
+            }
+
+        </script>
+        <script>
+            function checkinstall(){
+                if (window.matchMedia('(display-mode: standalone)').matches) {  
+                    closeinstaller();
+                    console.log('display-mode is standalone');
+                }  
+                else
+                    showinstaller();
+            }
+        </script>
     </head>
-    <body class="column large6 small12 medium10 center">
-        <input type="text" class="calc_area" id="calc_disp" disabled><br><br>
+    <body class="column large8 small12 medium10 center primary_black" onload="checkinstall();" onkeydown="keypress(event);" >
+        <div id="head">
+        <textarea class="calc_area primary_black" id="calc_disp" disabled></textarea><br><br>
         <div style="margin-left: 5%">
             <button class="frost_container column small3" onclick="write7();" onmouseover="frosting();">
                 <span class="frost">7</span>
@@ -23,8 +78,8 @@
             <button class="frost_container column small3" onclick="writedivide();" onmouseover="frosting();">
                 <span class="frost">/</span>
             </button>
-            <button class="frost_container column small3" onclick="writeclear();" onmouseover="frosting();">
-                <span class="frost">CLR</span>
+            <button class="frost_container column small3" onclick="writedelete();" onmouseover="frosting();">
+                <span class="frost">DEL</span>
             </button>
             <br><br>
             <button class="frost_container column small3" onclick="write4();" onmouseover="frosting();">
@@ -39,8 +94,8 @@
             <button class="frost_container column small3" onclick="writeproduct();" onmouseover="frosting();">
                 <span class="frost">*</span>
             </button>
-            <button class="frost_container column small3" onclick="writeinbracket();" onmouseover="frosting();">
-                <span class="frost">(</span>
+            <button class="frost_container column small3" onclick="writeclear();" onmouseover="frosting();">
+                <span class="frost">CLR</span>
             </button>
             <br><br>
             <button class="frost_container column small3" onclick="write1();" onmouseover="frosting();">
@@ -65,15 +120,53 @@
             <button class="frost_container column small3" onclick="write0();" onmouseover="frosting();">
                 <span class="frost">0</span>
             </button>
-            <button class="frost_container column small3" onclick="writedelete();" onmouseover="frosting();">
-                <span class="frost">DEL</span>
+            <button class="frost_container column small3" onclick="calculate(); output();" onmouseover="frosting();">
+                <span class="frost">=</span>
             </button>
             <button class="frost_container column small3" onclick="writeadd();" onmouseover="frosting();">
                 <span class="frost">+</span>
             </button>
-            <button class="frost_container column small3" onclick="calculate(); output();" onmouseover="frosting();">
-                <span class="frost">=</span>
+            <button class="frost_container column small3" onclick="writeinbracket();" onmouseover="frosting();">
+                <span class="frost">(</span>
             </button>
+        </div><br><br>
+
+    </div>
+
+
+        <div class="modal_container" id="install_button_surface">
+            <div class="modal_content">
+                <br><br><br><br><br><br><br><br>
+                <div class="column large6 medium8 small12 center">
+                    <button class="circular primary_red right" style="width: 50px; height: 50px; padding: 0px;" onclick="closeinstaller()">
+                        <i class="ms-Icon ms-Icon--Cancel"></i>
+                    </button><br><br><br><br>
+                    <button id="install_button" class="primary_blue center frost_container" onmouseover="frosting();" onclick="install();" style="height: 100px; width: 300px; font-size: 28px;">
+                        <span class="frost">Install Calculator</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </body>
-</html>
+    <script>
+        // This is the "Offline copy of pages" service worker
+
+        // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+
+        // Check compatibility for the browser we're running this in
+        if ("serviceWorker" in navigator) {
+            if (navigator.serviceWorker.controller) {
+                console.log("[PWA Builder] active service worker found, no need to register");
+            } else {
+                // Register the service worker
+                navigator.serviceWorker
+                .register("pwabuilder-sw.js", {
+                    scope: "./"
+                })
+                .then(function (reg) {
+                    console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+                });
+            }
+        }
+    </script>
+    </html>
