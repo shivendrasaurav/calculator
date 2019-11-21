@@ -673,6 +673,7 @@ li{font-size: 14px;}
 }
 .primary_white{
     background: #F2F2F2;
+    color: #000;
 }
 .primary_white .calc_area, .primary_white .calc_area:hover, .primary_white .calc_hover:focus{
     width: 100%;
@@ -682,7 +683,9 @@ li{font-size: 14px;}
     color: #000;
     padding: 20px;
 }
-
+.noanim::before{
+    background: transparent;
+}
 
 @media all and (display-mode: standalone) {
     body {
