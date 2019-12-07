@@ -688,10 +688,15 @@ li{font-size: 14px;}
 }
 
 @media all and (display-mode: standalone) {
-    body {
-      background-color: yellow;
-    }
     .install_button{
         display: none;
     }
+  }
+
+  @media (prefers-color-scheme: light){
+      body{background: #eee; color: #2a2a2a;}
+      .calc_area, .calc_area:hover{background: #eee; color: #2a2a2a; border: 2px solid #2a2a2a;}
+  }
+ @media (prefers-color-scheme: dark){
+      body, .calc_area, .calc_area:hover{background: #2a2a2a; color: #eee;}
   }
