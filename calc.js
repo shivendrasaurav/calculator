@@ -98,6 +98,8 @@ function writedelete(){
 }
 function calculate(){
     var b=eval(op);
+    if(op==="1212")
+        b="Happy Birthday Pragya";
     op=b;
     document.getElementById("calc_disp").value=b;
 }
