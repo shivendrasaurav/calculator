@@ -1,7 +1,8 @@
 <html>
     <head>
         <title>Calculator</title>
-        <link href="fluent.css" type="text/css" rel="stylesheet">
+        <link href="https://fluentdesignforweb.github.io/fluent.css" type="text/css" rel="stylesheet">
+        <link href="extra.css" type="text/css" rel="stylesheet">
         <link href="Icons/css/fluent-icons.css" type="text/css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Web Calculator Based On Fluent Design">
@@ -62,74 +63,26 @@
             }
         </script>
     </head>
-    <body class="column large6 small12 medium10 center" onload="checkinstall();" onkeydown="keypress(event);" >
-        <div id="head"><br><br>
-        <textarea class="calc_area" id="calc_disp" disabled></textarea><br><br>
-        <div style="margin-left: 5%">
-            <button class="frost_container column small3" onclick="write7();" onmouseover="frosting();">
-                <span class="frost">7</span>
-            </button>
-            <button class="frost_container column small3" onclick="write8();" onmouseover="frosting();">
-                <span class="frost">8</span>
-            </button>
-            <button class="frost_container column small3" onclick="write9();" onmouseover="frosting();">
-                <span class="frost">9</span>
-            </button>
-            <button class="frost_container column small3" onclick="writedivide();" onmouseover="frosting();">
-                <span class="frost">/</span>
-            </button>
-            <button class="frost_container column small3" onclick="writedelete();" onmouseover="frosting();">
-                <span class="frost">DEL</span>
-            </button>
-            <br><br>
-            <button class="frost_container column small3" onclick="write4();" onmouseover="frosting();">
-                <span class="frost">4</span>
-            </button>
-            <button class="frost_container column small3" onclick="write5();" onmouseover="frosting();">
-                <span class="frost">5</span>
-            </button>
-            <button class="frost_container column small3" onclick="write6();" onmouseover="frosting();">
-                <span class="frost">6</span>
-            </button>
-            <button class="frost_container column small3" onclick="writeproduct();" onmouseover="frosting();">
-                <span class="frost">*</span>
-            </button>
-            <button class="frost_container column small3" onclick="writeclear();" onmouseover="frosting();">
-                <span class="frost">CLR</span>
-            </button>
-            <br><br>
-            <button class="frost_container column small3" onclick="write1();" onmouseover="frosting();">
-                <span class="frost">1</span>
-            </button>
-            <button class="frost_container column small3" onclick="write2();" onmouseover="frosting();">
-                <span class="frost">2</span>
-            </button>
-            <button class="frost_container column small3" onclick="write3();" onmouseover="frosting();">
-                <span class="frost">3</span>
-            </button>
-            <button class="frost_container column small3" onclick="writesub();" onmouseover="frosting();">
-                <span class="frost">-</span>
-            </button>
-            <button class="frost_container column small3" onclick="writeoutbracket();" onmouseover="frosting();">
-                <span class="frost">)</span>
-            </button>
-            <br><br>
-            <button class="frost_container column small3" onclick="writedecimal();" onmouseover="frosting();">
-                <span class="frost">.</span>
-            </button>
-            <button class="frost_container column small3" onclick="write0();" onmouseover="frosting();">
-                <span class="frost">0</span>
-            </button>
-            <button class="frost_container column small3" onclick="calculate(); output();" onmouseover="frosting();">
-                <span class="frost">=</span>
-            </button>
-            <button class="frost_container column small3" onclick="writeadd();" onmouseover="frosting();">
-                <span class="frost">+</span>
-            </button>
-            <button class="frost_container column small3" onclick="writeinbracket();" onmouseover="frosting();">
-                <span class="frost">(</span>
-            </button>
-        </div><br><br>
+    <body class="column large4 small12 medium8 center" onload="checkinstall();" onkeydown="keypress(event);" >
+        <div id="head">
+            <div class="calc_area_container"><textarea class="calc_area"></textarea></div>
+            <div class="input_area">
+                <div class="input_row">
+                    <div class="column large3 medium3 small3 calc_input">
+                        <button>1</button>
+                    </div>
+                </div>
+                <div class="input_row">
+                </div>
+                <div class="input_row">
+                </div>
+                <div class="input_row">
+                </div>
+                <div class="input_row">
+                </div>
+
+            </div>
+        </div>
 
     </div>
 
