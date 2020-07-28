@@ -4,7 +4,7 @@ body{
 }
 .calc_area{
     height: 40%;
-    background: #fcfcfc;
+    background: #fafafa;
     border: none;
     width: 100%;
     resize: none;
@@ -19,9 +19,30 @@ body{
 .input_row{
     height: 20%;
 }
+.calc_input{
+    width: 24%;
+    display: inline-flex;
+}
 .calc_input button{
-    font-size: 36px;
+    font-size: 3.4vh;
     border-radius: 90px;
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
+    background: #ffffff;
+    padding: 6px;
+    transition: 400ms;
+    font-weight: 400;
+}
+.calc_input button:active{
+    transition: 400ms;
+    box-shadow: 4px 4px 12px #dcdcdc, 
+                -4px -4px 12px #dcdcdc;
+}
+
+.large_icon{
+    height: 100px;
+    width: 100px;
+}
+.app_name{
+    font-size: 32px;
 }

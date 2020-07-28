@@ -3,7 +3,7 @@
         <title>Calculator</title>
         <link href="https://fluentdesignforweb.github.io/fluent.css" type="text/css" rel="stylesheet">
         <link href="extra.css" type="text/css" rel="stylesheet">
-        <link href="Icons/css/fluent-icons.css" type="text/css" rel="stylesheet">
+        <link href="https://fluentdesignforweb.github.io/fluent-icons.css" type="text/css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Web Calculator Based On Fluent Design">
         <script src="calc.js"></script>
@@ -65,20 +65,77 @@
     </head>
     <body class="column large4 small12 medium8 center" onload="checkinstall();" onkeydown="keypress(event);" >
         <div id="head">
-            <div class="calc_area_container"><textarea class="calc_area"></textarea></div>
+            <textarea class="calc_area" id="calc_disp"></textarea>
             <div class="input_area">
                 <div class="input_row">
-                    <div class="column large3 medium3 small3 calc_input">
-                        <button>1</button>
+                    <div class="column calc_input">
+                        <button onclick="writeclear()" style="color: #0fa5df;">C</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="writedelete()" style="color: #0fa5df;">Del</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="writeinbracket()" style="color: #0fa5df;">(</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="writeoutbracket()" style="color: #0fa5df;">)</button>
                     </div>
                 </div>
                 <div class="input_row">
+                    <div class="column calc_input">
+                        <button onclick="write7()">7</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="write8()">8</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="write9()">9</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="writedivide()" style="color: #0fa5df;">/</button>
+                    </div>
                 </div>
                 <div class="input_row">
+                    <div class="column calc_input">
+                        <button onclick="write4()">4</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="write5()">5</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="write6()">6</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="writeproduct()" style="color: #0fa5df;">*</button>
+                    </div>
                 </div>
                 <div class="input_row">
+                    <div class="column calc_input">
+                        <button onclick="write1()">1</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="write2()">2</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="write3()">3</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="writesub()" style="color: #0fa5df;">-</button>
+                    </div>
                 </div>
                 <div class="input_row">
+                    <div class="column calc_input">
+                        <button onclick="write0()">0</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="writedecimal()">.</button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="calculate()" style="background: #0fa5df; color: #fcfcfc;"><i class="ms-Icon ms-Icon--CalculatorEqualTo icon-small"></i></button>
+                    </div>
+                    <div class="column calc_input">
+                        <button onclick="writeadd()" style="color: #0fa5df;">+</button>
+                    </div>
                 </div>
 
             </div>
@@ -88,15 +145,22 @@
 
 
         <div class="modal_container" id="install_button_surface">
-            <div class="modal_content">
-                <br><br><br><br><br><br><br><br>
-                <div class="column large6 medium8 small12 center">
-                    <button class="circular primary_red right" style="width: 50px; height: 50px; padding: 0px;" onclick="closeinstaller()">
-                        <i class="ms-Icon ms-Icon--Cancel"></i>
-                    </button><br><br><br><br>
-                    <button id="install_button" class="primary_blue center" onclick="install();" style="height: 100px; width: 300px; font-size: 28px;">
-                        Install Calculator
-                    </button>
+            <div class="modal_content zi2">
+                <div class="page_container">
+                    <div class="columns large12 medium12 small12">
+                        <br><br>
+                        <img src="./images/192x192.png" class="circular icon large_icon">
+                        <p class="app_name right small0"><b>Calculator</b></p>
+                        <hr style="width: 100%;">
+                    </div>
+                    <div class="columns large12 medium12 small12">
+                        <p class="app_name">Calculator</p>
+                        <p class="app_desc">
+                            A basic JavaScript Calculator in form of PWA
+                        </p>
+                        <button class="left large primary_blue" onclick="install(); closeinstaller();">Install</button>
+                        <button class="left primary_red can" onclick="closeinstaller();">Cancel</button>
+                    </div>
                 </div>
             </div>
         </div>
