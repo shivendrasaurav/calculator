@@ -34,7 +34,7 @@ body{
     font-weight: 400;
 }
 .calc_input button:active{
-    transition: 400ms;
+    transition: 100ms;
     box-shadow: 4px 4px 12px #dcdcdc, 
                 -4px -4px 12px #dcdcdc;
 }
