@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+*{
+    font-family: "Barlow";
+}
 body{
     background: #fafafa;
-    font-family: "Source Code Pro", Consolas;
 }
 .calc_area{
     height: 40%;
@@ -13,11 +16,12 @@ body{
     text-align: right;
 }
 .input_area{
-    height: 60%;
+    height: 60vh;
     background: #ffffff;
+    padding-top: 2vh;
 }
 .input_row{
-    height: 20%;
+    height: 12vh;
 }
 .calc_input{
     width: 24%;
@@ -45,4 +49,9 @@ body{
 }
 .app_name{
     font-size: 32px;
+}
+
+@media (prefers-color-scheme: dark) {
+
+
 }
