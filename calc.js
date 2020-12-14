@@ -99,7 +99,7 @@ function writedelete(){
 function calculate(){
     var b=eval(op);
     if(op==="15/12")
-        b="Happy Birthday Suchet Bakhan";
+        b="Happy Birthday Chucchi";
     op=b;
     document.getElementById("calc_disp").value=b;
 }
