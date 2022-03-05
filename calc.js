@@ -98,8 +98,8 @@ function writedelete(){
 }
 function calculate(){
     var b=eval(op);
-    if(op==="15/12")
-        b="Happy Birthday Chucchi";
+//    if(op==="2/7")
+//        b="Happy Birthday Suhani";
     op=b;
     document.getElementById("calc_disp").value=b;
 }
